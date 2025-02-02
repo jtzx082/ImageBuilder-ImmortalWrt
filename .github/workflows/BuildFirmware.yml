@@ -1,9 +1,6 @@
 name: Build and Release Firmware
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:
@@ -11,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       
       - name: Set up environment
         run: |
@@ -24,11 +21,11 @@ jobs:
           ./build_firmware.sh
 
       - name: Upload firmware artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: firmware
-          path: immortalwrt-imagebuilder-24.10.0-rc4-x86-64.Linux-x86_64/bin/targets/x86/64/*generic-squashfs-combined-efi.img.gz
-      
+          path: immortalwrt-imagebuilder-24.10.0-rc4-x86-64.Linux-x86_64/bin/targets/x86/64/*
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -40,12 +37,11 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
+      - name: Upload Release Assets
+        run: |
+          for file in immortalwrt-imagebuilder-24.10.0-rc4-x86-64.Linux-x86_64/bin/targets/x86/64/*; do
+            echo "Uploading $file"
+            gh release upload ${{ github.sha }} "$file" --clobber
+          done
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: immortalwrt-imagebuilder-24.10.0-rc4-x86-64.Linux-x86_64/bin/targets/x86/64/*generic-squashfs-combined-efi.img.gz
-          asset_name: firmware-${{ github.sha }}.img.gz
-          asset_content_type: application/gzip
