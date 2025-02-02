@@ -2,6 +2,11 @@ name: Build and Release Firmware
 
 on:
   workflow_dispatch:
+    inputs:
+      release: 
+        description: 将编译出的镜像上传到 Release
+        required: false
+        default: 'true'
 
 jobs:
   build-and-release:
