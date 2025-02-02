@@ -30,7 +30,7 @@ jobs:
       
       - name: Create Release
         id: create_release
-        uses: github/codeql-action/create-release@v1
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -40,7 +40,7 @@ jobs:
           prerelease: false
 
       - name: Upload Release Asset
-        uses: github/codeql-action/upload-release-asset@v1
+        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
