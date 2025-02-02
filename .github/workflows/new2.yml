@@ -1,0 +1,51 @@
+name: Build and Release Firmware
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Set up environment
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential libncurses5-dev gawk git subversion libssl-dev gettext unzip zlib1g-dev file wget
+
+      - name: Run build script
+        run: |
+          chmod +x build_firmware.sh
+          ./build_firmware.sh
+
+      - name: Get current date and time
+        id: datetime
+        run: echo "CURRENT_DATETIME=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+      
+      - name: Upload firmware artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: firmware
+          path: immortalwrt-imagebuilder-24.10.0-rc4-x86-64.Linux-x86_64/bin/targets/x86/64/*
+      
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: "release-${{ env.CURRENT_DATETIME }}"
+          release_name: "Firmware Release ${{ env.CURRENT_DATETIME }}"
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Assets
+        run: |
+          for file in immortalwrt-imagebuilder-24.10.0-rc4-x86-64.Linux-x86_64/bin/targets/x86/64/*; do
+            echo "Uploading $file"
+            gh release upload ${{ steps.create_release.outputs.upload_url }} "$file" --clobber
+          done
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
