@@ -4,7 +4,8 @@ luci-i18n-firewall-zh-cn
 luci-i18n-argon-config-zh-cn
 luci-i18n-package-manager-zh-cn
 luci-i18n-ttyd-zh-cn
-luci-app-openclash
+luci-i18n-passwall-zh-cn
+-luci-app-openclash
 luci-i18n-homeproxy-zh-cn
 openssh-sftp-server 
 luci-i18n-autoreboot-zh-cn
@@ -25,11 +26,11 @@ luci-app-dockerman
 luci-lib-docker 
 luci-i18n-cifs-mount-zh-cn
 luci-i18n-zerotier-zh-cn
-luci-app-passwall2
-luci-i18n-passwall2-zh-cn
+-luci-app-passwall2
+-luci-i18n-passwall2-zh-cn
 luci-app-turboacc
 luci-i18n-turboacc-zh-cn
-luci-app-adbyby-plus
+luci-app-adblock
 luci-i18n-adblock-zh-cn
 zsh
 vim-fuller
