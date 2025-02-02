@@ -55,7 +55,7 @@ echo "CONFIG_TARGET_ROOTFS_PARTSIZE=$ROOTFS_PARTSIZE" >> .config
 
 # 构建固件
 echo "Building firmware..."
-make image PROFILE=generic PACKAGES="$PLUGINS" ROOTFS_PARTSIZE=4096 FILES=files/
+make image PROFILE=generic PACKAGES="$PLUGINS" FILES=files/
 
 # 提示完成
 echo "Firmware build completed!"
