@@ -31,25 +31,6 @@ jobs:
           name: firmware
           path: immortalwrt-imagebuilder-24.10.0-rc4-x86-64.Linux-x86_64/bin/targets/x86/64/*
 
-      - name: Upload Firmware to Release
-        if: github.event.inputs.release == 'true'
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file_glob: true
-          file: ${{ env.VENDOR }}-imagebuilder-${{ env.VERSION }}-x86-64.Linux-x86_64/bin/targets/x86/64/*
-          asset_name: ${{ github.event.repository.name }}-${{ github.sha }}
-          tag: ${{ env.VENDOR }}-${{ env.VERSION }}-x86_64-${{ env.DATETIME }}
-          overwrite: true
-          body: |
-            地址：${{ github.event.inputs.LAN_IP }}
-                  
-      - name: Delete Old Releases
-        uses: dev-drprasad/delete-older-releases@master
-        with:
-          keep_latest: 8  
-          delete_tags: true
-          
       - name: Delete Old Workflows
         uses: Mattraks/delete-workflow-runs@main
         with:
