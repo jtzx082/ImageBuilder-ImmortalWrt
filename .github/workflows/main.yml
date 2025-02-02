@@ -1,0 +1,50 @@
+name: Build and Release Firmware
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Set up environment
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential libncurses5-dev gawk git subversion libssl-dev gettext unzip zlib1g-dev file wget
+
+      - name: Run build script
+        run: |
+          chmod +x build_firmware.sh
+          ./build_firmware.sh
+
+      - name: Upload firmware artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: firmware
+          path: immortalwrt-imagebuilder-24.10.0-rc4-x86-64.Linux-x86_64/bin/targets/x86/64/*generic-squashfs-combined-efi.img.gz
+      
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.sha }}
+          release_name: Firmware Release ${{ github.sha }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: immortalwrt-imagebuilder-24.10.0-rc4-x86-64.Linux-x86_64/bin/targets/x86/64/*generic-squashfs-combined-efi.img.gz
+          asset_name: firmware-${{ github.sha }}.img.gz
+          asset_content_type: application/gzip
