@@ -19,11 +19,11 @@ luci-i18n-ramfree-zh-cn
 luci-i18n-upnp-zh-cn
 luci-i18n-nlbwmon-zh-cn
 luci-i18n-uhttpd-zh-cn 
-luci-i18n-docker-zh-cn
-luci-app-docker 
+#luci-i18n-docker-zh-cn
+#luci-app-docker 
 luci-i18n-dockerman-zh-cn
-luci-app-dockerman
-luci-lib-docker 
+#luci-app-dockerman
+#luci-lib-docker 
 luci-i18n-cifs-mount-zh-cn
 luci-i18n-zerotier-zh-cn
 -luci-app-passwall2
