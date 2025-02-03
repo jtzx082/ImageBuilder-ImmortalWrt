@@ -30,10 +30,8 @@ luci-i18n-zerotier-zh-cn
 -luci-i18n-passwall2-zh-cn
 luci-app-turboacc
 luci-i18n-turboacc-zh-cn
-#luci-app-adblock
-#luci-i18n-adblock-zh-cn
-luci-app-adbyby-plus
-#adbyby
+luci-app-adblock
+luci-i18n-adblock-zh-cn
 zsh
 vim-fuller
 bash
