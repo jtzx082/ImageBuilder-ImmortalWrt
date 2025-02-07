@@ -12,7 +12,7 @@ luci-app-ttyd
 luci-i18n-ttyd-zh-cn
 luci-app-passwall
 luci-i18n-passwall-zh-cn
-luci-app-openclash
+-luci-app-openclash
 luci-app-homeproxy
 luci-i18n-homeproxy-zh-cn
 openssh-sftp-server
@@ -55,6 +55,9 @@ luci-app-adblock
 luci-i18n-adblock-zh-cn
 luci-app-watchcat
 luci-i18n-watchcat-zh-cn
+luci-app-mihomo
+luci-i18n-mihomo-zh-cn
+mihomo
 zsh
 vim-fuller
 bash
