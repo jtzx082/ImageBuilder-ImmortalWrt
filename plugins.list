@@ -55,9 +55,9 @@ luci-app-adblock
 luci-i18n-adblock-zh-cn
 luci-app-watchcat
 luci-i18n-watchcat-zh-cn
-luci-app-mihomo
-luci-i18n-mihomo-zh-cn
-mihomo
+-luci-app-mihomo
+-luci-i18n-mihomo-zh-cn
+-mihomo
 zsh
 vim-fuller
 bash
