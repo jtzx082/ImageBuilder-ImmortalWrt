@@ -12,7 +12,7 @@ luci-app-ttyd
 luci-i18n-ttyd-zh-cn
 luci-app-passwall
 luci-i18n-passwall-zh-cn
--luci-app-openclash
+luci-app-openclash
 luci-app-homeproxy
 luci-i18n-homeproxy-zh-cn
 openssh-sftp-server
