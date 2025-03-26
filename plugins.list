@@ -57,6 +57,7 @@ luci-theme-kucat
 luci-app-ddns-go
 luci-i18n-ddns-go-zh-cn
 luci-app-partexp
+luci-i18n-partexp-zh-cn
 zsh
 vim-fuller
 bash
