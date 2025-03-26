@@ -54,6 +54,7 @@ luci-i18n-turboacc-zh-cn
 luci-app-advancedplus
 luci-i18n-advancedplus-zh-cn
 luci-theme-kucat
+luci-app-ddns-go
 zsh
 vim-fuller
 bash
