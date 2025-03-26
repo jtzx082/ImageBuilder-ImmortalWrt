@@ -60,6 +60,8 @@ luci-app-partexp
 luci-i18n-partexp-zh-cn
 luci-app-taskplan
 luci-i18n-taskplan-zh-cn
+luci-app-netwizard
+luci-i18n-netwizard-zh-cn
 zsh
 vim-fuller
 bash
