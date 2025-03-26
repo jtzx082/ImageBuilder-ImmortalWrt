@@ -53,6 +53,7 @@ luci-app-turboacc
 luci-i18n-turboacc-zh-cn
 luci-app-advancedplus
 luci-i18n-advancedplus-zh-cn
+luci-theme-kucat
 zsh
 vim-fuller
 bash
