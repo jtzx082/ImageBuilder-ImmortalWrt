@@ -158,6 +158,16 @@ luci-i18n-ddns-zh-cn
 luci-i18n-arpbind-zh-cn
 luci-i18n-vlmcsd-zh-cn
 luci-i18n-cifs-mount-zh-cn
-luci-i18n-argon-config-zh-cn
+-luci-i18n-argon-config-zh-cn
 luci-i18n-uhttpd-zh-cn
 luci-i18n-base-zh-cn
+homebox
+luci-app-netspeedtest
+luci-app-netwizard
+luci-app-partexp
+luci-app-taskplan
+luci-i18n-netspeedtest
+luci-i18n-netwizard
+luci-i18n-partexp
+luci-i18n-taskplan
+luci-theme-kucat
