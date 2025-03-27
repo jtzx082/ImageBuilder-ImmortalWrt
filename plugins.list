@@ -166,8 +166,10 @@ luci-app-netspeedtest
 luci-app-netwizard
 luci-app-partexp
 luci-app-taskplan
+luci-app-turboacc
 luci-i18n-netspeedtest
 luci-i18n-netwizard
 luci-i18n-partexp
 luci-i18n-taskplan
+luci-i18n-turboacc-zh-cn
 luci-theme-kucat
