@@ -73,9 +73,9 @@ kmod-nft-tproxy
 kmod-nft-socket
 kmod-tun
 kmod-drm-i915
-kmod-wireguard
-wireguard-tools
-luci-proto-wireguard
+-kmod-wireguard
+-wireguard-tools
+-luci-proto-wireguard
 adguardhome
 q
 jq
