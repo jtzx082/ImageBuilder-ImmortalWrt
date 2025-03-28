@@ -151,7 +151,7 @@ luci-i18n-ddns-go-zh-cn
 -luci-i18n-netspeedtest-zh-cn
 -luci-i18n-gecoosac-zh-cn
 luci-i18n-ramfree-zh-cn
-luci-i18n-passwall-zh-cn
+-luci-i18n-passwall-zh-cn
 luci-i18n-homeproxy-zh-cn
 luci-i18n-autoreboot-zh-cn
 luci-i18n-ddns-zh-cn
@@ -174,3 +174,7 @@ luci-i18n-partexp-zh-cn
 luci-i18n-taskplan-zh-cn
 luci-i18n-turboacc-zh-cn
 luci-theme-kucat
+v2ray-geoip
+v2ray-geosite
+luci-app-passwall2
+luci-i18n-passwall2-zh-cn
