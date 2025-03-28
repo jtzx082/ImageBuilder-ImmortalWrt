@@ -178,3 +178,7 @@ v2ray-geoip
 v2ray-geosite
 luci-app-passwall2
 luci-i18n-passwall2-zh-cn
+p910nd
+kmod-usb-printer
+luci-app-usb-printer
+luci-i18n-usb-printer-zh-cn
