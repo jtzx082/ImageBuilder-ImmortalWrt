@@ -162,7 +162,6 @@ luci-i18n-argon-config-zh-cn
 luci-i18n-uhttpd-zh-cn
 luci-i18n-base-zh-cn
 luci-i18n-dockerman-zh-cn
-luci-i18n-openvpn-server-zh-cn
 homebox
 luci-app-netspeedtest
 luci-app-netwizard
