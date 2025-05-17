@@ -158,7 +158,7 @@ luci-i18n-ddns-zh-cn
 luci-i18n-arpbind-zh-cn
 luci-i18n-vlmcsd-zh-cn
 luci-i18n-cifs-mount-zh-cn
--luci-i18n-argon-config-zh-cn
+luci-i18n-argon-config-zh-cn
 luci-i18n-uhttpd-zh-cn
 luci-i18n-base-zh-cn
 luci-i18n-dockerman-zh-cn
