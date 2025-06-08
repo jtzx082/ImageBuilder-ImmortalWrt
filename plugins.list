@@ -32,3 +32,6 @@ luci-i18n-partexp-zh-cn
 kmod-usb-printer
 luci-app-usb-printer
 luci-i18n-usb-printer-zh-cn
+fdisk
+script-utils
+luci-i18n-samba4-zh-cn
