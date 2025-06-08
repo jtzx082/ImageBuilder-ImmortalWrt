@@ -14,6 +14,7 @@ luci-i18n-homeproxy-zh-cn
 luci-i18n-netdata-zh-cn
 luci-i18n-nlbwmon-zh-cn
 luci-app-openclash
+luci-i18n-openvpn-server-zh-cn
 openssh-sftp-server
 luci-i18n-package-manager-zh-cn
 luci-i18n-passwall-zh-cn
