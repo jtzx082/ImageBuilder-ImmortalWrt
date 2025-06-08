@@ -141,8 +141,9 @@ luci-i18n-ddns-go-zh-cn
 luci-i18n-netspeedtest-zh-cn
 luci-i18n-ramfree-zh-cn
 luci-i18n-passwall-zh-cn
+luci-app-openclash
 luci-i18n-openvpn-server-zh-cn
--luci-i18n-homeproxy-zh-cn
+luci-i18n-homeproxy-zh-cn
 luci-i18n-autoreboot-zh-cn
 luci-i18n-ddns-zh-cn
 luci-i18n-arpbind-zh-cn
