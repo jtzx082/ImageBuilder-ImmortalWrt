@@ -1,4 +1,4 @@
-name: Build and Release Firmware
+name: Build and Release Firmware优化
 
 on:
   workflow_dispatch:
