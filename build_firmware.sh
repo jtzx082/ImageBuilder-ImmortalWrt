@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # 定义一些变量
-IMAGEBUILDER_URL="https://downloads.immortalwrt.org/releases/24.10.1/targets/x86/64/immortalwrt-imagebuilder-24.10.1-x86-64.Linux-x86_64.tar.zst"
-IMAGEBUILDER_DIR="immortalwrt-imagebuilder-24.10.1-x86-64.Linux-x86_64"
+IMAGEBUILDER_URL="https://downloads.immortalwrt.org/releases/24.10.2/targets/x86/64/immortalwrt-imagebuilder-24.10.2-x86-64.Linux-x86_64.tar.zst"
+IMAGEBUILDER_DIR="immortalwrt-imagebuilder-24.10.2-x86-64.Linux-x86_64"
 PLUGIN_LIST_FILE="plugins.list"
 IPK_DIR="./softs" # 指定存放IPK文件的文件夹
 ROOTFS_PARTSIZE=1024 # 设置 ROOTFS_PARTSIZE 为 1024MB
