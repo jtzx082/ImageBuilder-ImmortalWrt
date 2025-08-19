@@ -16,7 +16,7 @@ fi
 # 更新并安装必要的软件包
 echo "Updating and installing necessary packages..."
 sudo apt-get update
-sudo apt-get install -y build-essential libncurses5-dev gawk git subversion libssl-dev gettext unzip zlib1g-dev file wget
+sudo apt-get install -y build-essential libncurses5-dev gawk git subversion libssl-dev gettext unzip zlib1g-dev file wget qemu-utils
 
 # 下载镜像构建器
 echo "Downloading ImageBuilder..."
