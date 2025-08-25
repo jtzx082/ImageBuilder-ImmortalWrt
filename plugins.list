@@ -75,6 +75,7 @@ openssh-sftp-server
 luci-i18n-base-zh-cn
 luci-i18n-firewall-zh-cn
 luci-i18n-package-manager-zh-cn
+bash
 -vnstat2
 -luci-app-vnstat2
 -luci-i18n-vnstat2-zh-cn
