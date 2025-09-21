@@ -16,36 +16,37 @@ jobs:
     - name: Set up environment
       run: |
         sudo apt update
-        sudo apt install -y git subversion build-essential libncurses5-dev zlib1g-dev gawk gettext unzip libssl-dev python3 python3-setuptools file wget
+        sudo apt install -y git subversion build-essential libncurses5-dev zlib1g-dev gawk gettext unzip libssl-dev python3 python3-setuptools file wget zstd
 
     - name: Download ImmortalWrt ImageBuilder
       run: |
-        # 获取最新 ImmortalWrt ImageBuilder（针对 x86_64 示例，替换为你的目标）
+        # 下载最新的 ImmortalWrt ImageBuilder（针对 x86_64）
         wget https://downloads.immortalwrt.org/releases/24.10.2/targets/x86/64/immortalwrt-imagebuilder-24.10.2-x86-64.Linux-x86_64.tar.zst
-        tar -xJf imagebuilder.tar.xz
-        cd x86-64  # 进入 ImageBuilder 目录
+        # 解压 .tar.zst 文件
+        tar -I zstd -xf immortalwrt-imagebuilder-24.10.2-x86-64.Linux-x86_64.tar.zst
+        cd immortalwrt-imagebuilder-24.10.2-x86-64  # 进入解压后的目录
 
     - name: Copy custom files
       run: |
-        cd x86-64  # 假设 ImageBuilder 目录
-        cp -r ../../files ./files/  # 复制你的 UCI 脚本等自定义文件
+        cd immortalwrt-imagebuilder-24.10.2-x86-64
+        cp -r ../../files ./files/  # 复制 UCI 脚本等自定义文件
 
     - name: Build image
       run: |
-        cd x86-64
+        cd immortalwrt-imagebuilder-24.10.2-x86-64
         make image PROFILE="immortalwrt_x86-64-generic" PACKAGES="luci"  # 示例：添加 LuCI，调整 PROFILE
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
         name: immortalwrt-firmware
-        path: x86-64/bin/targets/x86/64/*.img.gz  # 固件输出路径
+        path: immortalwrt-imagebuilder-24.10.2-x86-64/bin/targets/x86/64/*.img.gz  # 固件输出路径
 
     - name: Release if manual
       if: github.event_name == 'workflow_dispatch'
       uses: softprops/action-gh-release@v2
       with:
-        files: x86-64/bin/targets/x86/64/*.img.gz
+        files: immortalwrt-imagebuilder-24.10.2-x86-64/bin/targets/x86/64/*.img.gz
         tag_name: latest-build-${{ github.run_number }}
         name: ImmortalWrt Custom Build
         body: "自动编译的 ImmortalWrt 固件，包含自定义 UCI 脚本。"
